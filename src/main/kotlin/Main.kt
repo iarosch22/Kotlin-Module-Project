@@ -1,3 +1,6 @@
 fun main(args: Array<String>) {
-    println("Hello Vitaliy!")
+
+    val app = ArchiveMenu()
+
+    app.start()
 }
