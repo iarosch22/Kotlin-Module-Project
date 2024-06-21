@@ -1,12 +1,14 @@
-data class Archive(val name: String, val content: MutableSet<Note>) {
+data class Archive(val name: String, val content: MutableList<Note>) {
+
+    fun addNote(note: Note) {
+        content.add(note)
+    }
 
     override fun toString(): String {
-
         return if (content.isEmpty()) {
             "Архив \"$name\". Заметок пока нет"
         } else {
-            "Архив \"$name\":\n ${content.forEach { note -> println(note.toString()) }}"
+            "Архив \"$name\". В архиве есть заметки"
         }
     }
-
 }
